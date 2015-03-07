@@ -1,0 +1,81 @@
+
+body {
+	background-color: #eeeeee;
+
+}
+
+.jumbotron p {
+
+margin-top: 60px !important;
+font-family: 'Roboto', sans-serif;
+
+}
+
+.jumbotron {
+	background-color: white;
+}
+
+h2 {
+	font-family: 'Montserrat', sans-serif;
+	/*font-weight: 900;*/
+	font-size: 1.2em;
+	color: black;
+	text-align: center;
+	letter-spacing: 0.02em; 
+}
+
+.center {
+	margin: 0 auto;
+	width: 300px;
+	height: 250px;
+}
+
+.navbar {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.navbar-inverse {
+	background-color: black;
+	border-color: #36d9c3;
+	border-style: none;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+	background-color: #36d9c3;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: white;
+}
+
+.navbar-nav li:first-child {
+	margin-left: 30px;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #0e4d41;
+}
+
+@font-face {
+    font-family: 'st_marie_thinthin';
+    src: url('../fonts/StMarie-Thin-webfont.eot');
+    src: url('../fonts/StMarie-Thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/StMarie-Thin-webfont.woff2') format('woff2'),
+         url('../fonts/StMarie-Thin-webfont.woff') format('woff'),
+         url('../fonts/StMarie-Thin-webfont.ttf') format('truetype'),
+         url('../fonts/StMarie-Thin-webfont.svg#st_marie_thinthin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+footer p{
+	margin: 0 auto;
+	max-width: 300px;
+	text-align: center;
+	/*background-color: blue;*/
+	padding-bottom: 15px;
+}
