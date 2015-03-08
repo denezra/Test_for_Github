@@ -1,0 +1,22 @@
+* {
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	z-index: 1;
+}
+#container { background-color: white; height: 248px; width: 298px; }
+.text-animation {
+	color: #27b29f;
+	font-size: 26px;
+	left: -45px;
+	position: absolute;
+	top: 60px;
+	opacity: 0;
+	width: 300px;
+	padding: 0px 90px 0px;
+}
