@@ -1,52 +1,41 @@
 // Window load
 window.onload = function() {
-	var ctr  = 1;
-	//startAnimation(ctr)
+	startAnimation()
 	getElem('container').style.fontFamily = 'lato';
 	addBorder(getElem('container'), '1px', 'solid', 'black');
 }
-function startAnimation(ctr) {
-	var timerOne = setInterval(function() {
-	 	if(ctr !== 13) {
-	 		getElem('text' + ctr).className += ' texts-appear';
-	 		ctr++
-	 	} else {
-	 		clearInterval(timerOne);
-	 		ctr = 1;
-	 		setTimeout(function(){
-	 			secondAnimation(ctr);
-	 		},1000);
-	 	}
-	},50)
-}
-function secondAnimation(ctr) {
-	console.log('Second Animation');
-	var timerTwo = setInterval(function() {
-		if(ctr !== 13) {
-	 		getElem('text' + ctr).className += ' texts-second-animation';
-	 		ctr++
-	 	} else {
-	 		clearInterval(timerTwo);
-	 		setTimeout(function(){
-	 			resetAnimation(ctr);
-	 		},1500);
-	 	}
-	}, 50)
-}
-function resetAnimation(ctr) {
-	for (var i = 1; i < ctr; i++) {
-		console.log('i ', i);
-		removeClass(getElem('text'+i), 'texts-appear');
-		removeClass(getElem('text'+i), 'texts-second-animation');
-		if(i == 12) {
-			console.log('ctr ', ctr);
-			ctr = 1;
+function startAnimation() {
+	setTimeout(function(){
+		getElem('text_one').className += ' text-one_animate';
+		setTimeout(function(){
+			getElem('text_two').className += ' text-two_animate';
 			setTimeout(function(){
-				startAnimation(ctr);
-			},200);
-			break;
-		}
-	};
+					getElem('text_three').className += ' text-three_animate';
+					setTimeout(secondAnimation,250)
+			},100);
+		},100);
+	},500);
+}
+function secondAnimation() {
+	setTimeout(function(){
+		getElem('text_three').className += ' text-three_second-animate';
+		setTimeout(function(){
+			getElem('text_two').className += ' text-two_second-animate';
+			setTimeout(function(){
+					getElem('text_one').className += ' text-one_second-animate';
+					setTimeout(resetAnimation,250)
+			},100);
+		},100);
+	},500);
+}
+function resetAnimation() {
+	removeClass(getElem('text_one'), 'text-one_animate');
+	removeClass(getElem('text_one'), 'text-one_second-animate');
+	removeClass(getElem('text_two'), 'text-two_animate');
+	removeClass(getElem('text_two'), 'text-two_second-animate');
+	removeClass(getElem('text_three'), 'text-three_animate');
+	removeClass(getElem('text_three'), 'text-three_second-animate');
+	setTimeout(startAnimation,250)
 }
 // Get element id attribute
 function getElem(element) {
