@@ -62,11 +62,11 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
-          <h2>Btn 1 - ROLODEX</h2>
+          <h2>txt 1 - ROLODEX</h2>
           <div class="center">
-          <object width="300" height="250">
-              <param name="movie" value="swfs/txt-1.swf">
-          </object>
+            <iframe id="receiver" src="htmls/txt-1.html" width="321" height="254">
+                <p>Your browser does not support iframes.</p>
+            </iframe>
           </div>
         </div>
         <div class="col-md-4">
@@ -89,7 +89,7 @@
           <h2>txt 1 - ROLODEX</h2>
           <div class="center">
           <object width="300" height="250">
-              <param name="movie" value="swfs/txt-4.swf">
+              <param name="movie" value="htmls/txt-4.html">
           </object>
         </div>
         </div>
@@ -150,5 +150,14 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+      function sendMessage(e) {
+        // Prevent any default browser behaviour.
+        e.preventDefault();
+
+        // Send a message with the text 'Hello Treehouse!' to the receiver window.
+        receiver.postMessage('Hello Treehouse!', 'http://demos.matt-west.com');
+      }
+    </script>
   </body>
 </html>

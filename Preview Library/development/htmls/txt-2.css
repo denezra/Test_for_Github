@@ -1,0 +1,151 @@
+* {
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	z-index: 1;
+}
+#container { background-color: white; height: 248px; width: 298px; }
+.text-one {
+	color: #27b29f;
+	font-size: 26px;
+	position: absolute;
+}
+.text-two {
+	color: #27b29f;
+	font-size: 26px;
+	position: absolute;
+	transform: skewX(-20deg) translate(-80px, 130px);
+	-webkit-transform: skewX(-20deg) translate(-80px, 130px);
+	-moz-transform: skewX(-20deg) translate(-80px, 130px);
+	-ms-transform: skewX(-20deg) translate(-80px, 130px);
+	filter: blur(3px);
+	-webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	-ms-filter: blur(3px);
+}
+.words-one-appear {
+	opacity: 1;
+	animation: texts-one-appear-animate .8s cubic-bezier(.68, -.55, .265, 1.55) 0s 1 normal forwards running;
+	/*IE fail safe by removing the animation-play-state*/
+	animation: texts-one-appear-animate .8s cubic-bezier(.68, -.55, .265, 1.55) 0s 1 normal forwards;
+	-webkit-animation: texts-one-appear-animate .8s cubic-bezier(.68, -.55, .265, 1.55) 0s 1 normal forwards running;
+	-moz-animation: texts-one-appear-animate .8s cubic-bezier(.68, -.55, .265, 1.55) 0s 1 normal forwards running;
+}
+.words-one-second-animation {
+	opacity: 1;
+	animation: texts-one-second-animate .25s cubic-bezier(.25, .1, .25, 1) 0s 1 normal forwards running;
+	/*IE fail safe by removing the animation-play-state*/
+	animation: texts-one-second-animate .25s cubic-bezier(.25, .1, .25, 1) 0s 1 normal forwards;
+	-webkit-animation: texts-one-second-animate .25s cubic-bezier(.25, .1, .25, 1) 0s 1 normal forwards running;
+	-moz-animation: texts-one-second-animate .25s cubic-bezier(.25, .1, .25, 1) 0s 1 normal forwards running;
+}
+.words-two-appear {
+	opacity: 1;
+	animation: texts-two-appear-animate .25s cubic-bezier(.175, .885, .32, 1.275) 0s 1 normal forwards running;
+	/*IE fail safe by removing the animation-play-state*/
+	animation: texts-two-appear-animate .25s cubic-bezier(.175, .885, .32, 1.275) 0s 1 normal forwards;
+	-webkit-animation: texts-two-appear-animate .25s cubic-bezier(.175, .885, .32, 1.275) 0s 1 normal forwards running;
+	-moz-animation: texts-two-appear-animate .25s cubic-bezier(.175, .885, .32, 1.275) 0s 1 normal forwards running;
+}
+.words-two-second-animation {
+	opacity: 1;
+	animation: texts-two-second-animate .25s cubic-bezier(.25, .1, .25, 1) 0s 1 normal forwards running;
+	/*IE fail safe by removing the animation-play-state*/
+	animation: texts-two-second-animate .25s cubic-bezier(.25, .1, .25, 1) 0s 1 normal forwards;
+	-webkit-animation: texts-two-second-animate .25s cubic-bezier(.25, .1, .25, 1) 0s 1 normal forwards running;
+	-moz-animation: texts-two-second-animate .25s cubic-bezier(.25, .1, .25, 1) 0s 1 normal forwards running;
+}
+/*CSS: keyframes*/
+/*===============================================
+	NOTE:
+	* Remove unnecessary prefixes in the keyframes
+	* IE9 and below doesn't support CSS animation and keyframes, so don't bother
+		to put -ms- prefixes
+	===============================================*/
+/*Sample: -webkit-keframes should only have -webkit-transform.*/
+@keyframes texts-one-appear-animate {
+	0% {
+		transform: skewX(-20deg) translate(-70px, 110px);
+		filter: blur(3px);
+	}
+	90% {
+		transform: skewX(-20deg) translate(127px, 110px);
+		filter: blur(3px);
+	}
+	98% {
+		transform: skewX(0deg) translate(127px, 110px);
+		filter: blur(0px);
+	}
+	100% {
+		transform: skewX(0deg) translate(127px, 110px);
+		filter: blur(0px);
+	}
+}
+@-webkit-keyframes texts-one-appear-animate {
+	0% {
+		-webkit-transform: skewX(-20deg) translate(-70px, 110px);
+		-webkit-filter: blur(3px);
+	}
+	90% {
+		-webkit-transform: skewX(-20deg) translate(127px, 110px);
+		-webkit-filter: blur(3px);
+	}
+	98% {
+		-webkit-transform: skewX(0deg) translate(94px, 110px);
+		-webkit-filter: blur(0px);
+	}
+	100% {
+		-webkit-transform: skewX(0deg) translate(94px, 110px);
+		-webkit-filter: blur(0px);
+	}
+}
+@-moz-keyframes texts-one-appear-animate {
+	0% {
+		-moz-transform: skewX(-20deg) translate(-70px, 110px);
+		filter: blur(3px);
+	}
+	90% {
+		-moz-transform: skewX(-20deg) translate(127px, 110px);
+		-moz-filter: blur(3px);
+	}
+	98% {
+		-moz-transform: skewX(0deg) translate(94px, 110px);
+		-moz-filter: blur(0px);
+	}
+	100% {
+		-moz-transform: skewX(0deg) translate(94px, 110px);
+		-moz-filter: blur(0px);
+	}
+}
+
+@keyframes texts-one-second-animate {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(.7);
+	}
+}
+@-webkit-keyframes texts-one-second-animate {
+	0% {
+		-webkit-transform: scale(1);
+	}
+
+	100% {
+		-webkit-transform: scale(.7);
+	}
+}
+@-moz-keyframes texts-one-second-animate {
+	0% {
+		-moz-transform: scale(1);
+	}
+
+	100% {
+		-moz-transform: scale(.7);
+	}
+}

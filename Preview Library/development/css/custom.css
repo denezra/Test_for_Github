@@ -3,6 +3,10 @@ body {
 	background-color: #eeeeee;
 
 }
+iframe {
+	overflow: hidden;
+	border: none;
+}
 
 .jumbotron p {
 

@@ -1,0 +1,56 @@
+* {
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	z-index: 1;
+}
+#container { background-color: white; height: 248px; overflow: hidden; width: 298px; }
+.text-animation {
+	color: #27b29f;
+	font-size: 26px;
+	left: -45px;
+	position: absolute;
+	top: 110px;
+	width: 300px;
+	padding: 0px 90px 0px;
+}
+.shine-one {
+  animation: shine 1.5s cubic-bezier(.25, .25, .75, .75) 0s infinite normal none running;
+	/*IE fail safe by removing the animation-play-state*/
+	animation: shine 1.5s cubic-bezier(.25, .25, .75, .75) 0s infinite normal none;
+	-webkit-animation: shine 1.5s cubic-bezier(.25, .25, .75, .75) 0s infinite normal none running;
+	-moz-animation: shine 1.5s cubic-bezier(.25, .25, .75, .75) 0s infinite normal none running;
+}
+.shine-two {
+	opacity: 0;
+  animation: shine 1.5s cubic-bezier(.25, .25, .75, .75) 0.35s infinite normal none running;
+	/*IE fail safe by removing the animation-play-state*/
+	animation: shine 1.5s cubic-bezier(.25, .25, .75, .75) 0.35s infinite normal none;
+	-webkit-animation: shine 1.5s cubic-bezier(.25, .25, .75, .75) 0.35s infinite normal none running;
+	-moz-animation: shine 1.5s cubic-bezier(.25, .25, .75, .75) 0.35s infinite normal none running;
+}
+/*CSS: keyframes*/
+/*===============================================
+	NOTE:
+	* Remove unnecessary prefixes in the keyframes
+	* IE9 and below doesn't support CSS animation and keyframes, so don't bother
+		to put -ms- prefixes
+	===============================================*/
+/*Sample: -webkit-keframes should only have -webkit-transform.*/
+@keyframes shine {
+	0%{ opacity: 1; transform: translate(-100px, 0px); }
+  100%{ opacity: 1; transform: translate(215px, 0px); }
+}
+@-webkit-keyframes shine {
+	0%{ opacity: 1; -webkit-transform: translate(-100px, 0px); }
+  100%{ opacity: 1; -webkit-transform: translate(215px, 0px); }
+}
+@-moz-keyframes shine {
+	0%{ opacity: 1; -moz-transform: translate(-100px, 0px); }
+  100%{ opacity: 1; -moz-transform: translate(215px, 0px); }
+}
