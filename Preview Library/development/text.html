@@ -16,8 +16,9 @@
 
 
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
-
+    
+    <!-- CSS Colorpicker -->
+    <link rel="stylesheet"  href="css/spectrum.css" />
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
@@ -59,6 +60,7 @@
     </nav>
 <br><br><br><br>
     <div class="container">
+    <input type='text' class="basic"/>
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
@@ -150,16 +152,26 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/spectrum.js"></script>
+    <!-- Colorpicker Javascript -->
     <script>
+      window.addEventListener('load', function() {
+        $(".basic").spectrum({
+            color: "#f00",
+            change: function(color) {
+              console.log('Color: ', color.toHexString());
+              sendMessage(color.toHexString());
+            }
+        });
+      }, false)
+    
       // Get the window displayed in the iframe.
       var receiver = document.getElementById('receiver').contentWindow;
 
-      function sendMessage() {
-
+      function sendMessage(color) {
         // Send a message with the text 'Hello Treehouse!' to the receiver window.
-        receiver.postMessage('Hello Candy Banners', 'http://www.candybanners.com');
+        receiver.postMessage(color, 'http://www.candybanners.com');
       }
-      setTimeout(sendMessage, 1500)
     </script>
   </body>
 </html>
