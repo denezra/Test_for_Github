@@ -151,6 +151,9 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
     <script>
+      // Get the window displayed in the iframe.
+      var receiver = document.getElementById('receiver').contentWindow;
+      
       function sendMessage(e) {
         // Prevent any default browser behaviour.
         e.preventDefault();
